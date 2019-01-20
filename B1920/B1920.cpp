@@ -49,4 +49,5 @@ int main() {
 		if (find(a, 0, n - 1, key)) cout << 1 << '\n';
 		else cout << 0 << '\n';
 	}
+	return 0;
 }
