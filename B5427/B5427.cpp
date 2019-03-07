@@ -1,11 +1,13 @@
 #include <iostream>
 #include <queue>
+#include <cstdio>
 using namespace std;
 char a[1002][1002];
 int d[1002][1002];
 int dx[] = { 0,0,-1,1 };
 int dy[] = { -1,1,0,0 };
 int main() {
+	ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
 	int T; cin >> T;
 	while (T--) {
 		int n, m; cin >> m >> n;
@@ -24,15 +26,16 @@ int main() {
 			d[i][m + 1] = 0;
 		}
 		for (int i = 1; i <= n; ++i) {
-			getchar();
+			cin.get();
 			for (int j = 1; j <= m; ++j) {
-				a[i][j] = getchar();
+				a[i][j] = cin.get();
+				d[i][j] = 0;
 				if (a[i][j] == '@') {
 					q.push({ i,j });
 					a[i][j] = '.';
+					d[i][j] = 1;
 				}
 				else if (a[i][j] == '*') fire.push({ i,j });
-				d[i][j] = 0;
 			}
 		}
 		bool go = true;
@@ -75,6 +78,6 @@ int main() {
 			}
 		}
 		if (ans == -1) cout << "IMPOSSIBLE" << '\n';
-		else cout << ans << '\n';
+		else cout << ans - 1 << '\n';
 	}
 }
