@@ -5,9 +5,7 @@ int d[101][101] = { 0, };
 int dx[] = { 0,1,0,-1 };
 int dy[] = { 1,0,-1,0 };
 int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(0);
-	cout.tie(0);
+	ios_base::sync_with_stdio(false),cin.tie(0),cout.tie(0);
 	int n;
 	cin >> n;
 	d[0][0] = 1;
@@ -25,9 +23,11 @@ int main() {
 	int x = 0, y = 0;
 	int nowd = 0;
 	for (int k = 0; k <= T; ++k) {
-		int time = n * n-1;
+		int time = n * n - 1;
 		char cmd;
-		if (k < T) cin >> time >> cmd;
+		if (k < T) {
+			cin >> time >> cmd;
+		}
 		while (ans < time) {
 			++ans;
 			int nx = x + dx[nowd];
@@ -61,6 +61,7 @@ int main() {
 			}
 		}
 		if (cmd == 'D') nowd = (nowd + 1) % 4;
-		else if (cmd == 'L') nowd = (nowd + 3) % 4;		
+		else if (cmd == 'L') nowd = (nowd + 3) % 4;
+
 	}
 }
