@@ -23,6 +23,7 @@ void go(int index, int cnt, long long temp, int a[]) {
 	}
 }
 int main() {
+	ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
 	cin >> n;
 	int a[10];
 	for (int i = 0; i < n; ++i) cin >> a[i];
