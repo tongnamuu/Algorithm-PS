@@ -9,14 +9,14 @@ int n;
 int tot = 0;
 int ssize = 2;
 struct nextpos {
-	int x=0;
-	int y=0;
+	int x = 0;
+	int y = 0;
 	int cnt;
 };
 nextpos bfs(nextpos now) {
 	int d[21][21] = { 0, };
 	bool find = false;
-	queue<pair<int,int>>q;
+	queue<pair<int, int>>q;
 	pair<int, int> hubo[21];
 	int pn = 0;
 	int mindist = -1;
@@ -29,7 +29,7 @@ nextpos bfs(nextpos now) {
 		for (int dir = 0; dir < 4; dir++) {
 			int nx = x + dx[dir];
 			int ny = y + dy[dir];
-			if (nx >= 0 && nx < n&&ny >= 0 && ny < n && d[nx][ny]==0) {
+			if (nx >= 0 && nx < n&&ny >= 0 && ny < n && d[nx][ny] == 0) {
 				if (a[nx][ny] > ssize) continue;
 				if (a[nx][ny] == 0) {
 					d[nx][ny] = d[x][y] + 1;
@@ -42,7 +42,7 @@ nextpos bfs(nextpos now) {
 				else if (a[nx][ny] < ssize) {
 					find = true;
 					d[nx][ny] = d[x][y] + 1;
-					if (mindist == -1 || d[nx][ny]-1 <= mindist) {
+					if (mindist == -1 || d[nx][ny] - 1 <= mindist) {
 						hubo[pn++] = { nx,ny };
 						mindist = d[nx][ny] - 1;
 					}
@@ -70,7 +70,7 @@ int main() {
 	int startx, starty;
 	for (int i = 0; i < n; ++i) {
 		for (int j = 0; j < n; ++j) {
-			cin >> a[i][j]; 
+			cin >> a[i][j];
 			if (a[i][j] == 9) {
 				startx = i;
 				starty = j;
@@ -79,7 +79,7 @@ int main() {
 		}
 	}
 	nextpos p = { startx,starty,0 };
-	while (p.x!=-1&&p.y!=-1) {
+	while (p.x != -1 && p.y != -1) {
 		p = bfs(p);
 	}
 	cout << tot << '\n';
