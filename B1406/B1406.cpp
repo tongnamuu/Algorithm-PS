@@ -14,12 +14,10 @@ struct stack {
 	}
 };
 int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(0);
-	cout.tie(0);
-	char a[600001];
+	ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
 	stack left;
 	stack right;
+	char a[600001];
 	cin >> a;
 	int len = 0;
 	while (a[len]) len++;
