@@ -10,9 +10,9 @@ void swap1(int &x, int &y) {
 }
 bool next_permutation1(int a[], int n) {
 	int index = n - 1;
-	while (index>=1 && a[index - 1] >= a[index]) index--;
+	while (index >= 1 && a[index - 1] >= a[index]) index--;
 	if (index == 0) return false;
-	int ind=n-1;
+	int ind = n - 1;
 	while (a[ind] <= a[index - 1]) ind--;
 	swap1(a[index - 1], a[ind]);
 	int j = n - 1;
@@ -35,7 +35,6 @@ int main() {
 			cin >> a[i];
 		}
 		vector<vector<int>>ans;
-		int num = a[0];
 		do {
 			vector<int>now;
 			for (int i = 0; i < n; ++i) {
