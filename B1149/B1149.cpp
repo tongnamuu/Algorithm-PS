@@ -22,5 +22,5 @@ int main() {
 		d[i][1] = min(d[i - 1][0], d[i - 1][2]) + a[i].g;
 		d[i][2] = min(d[i - 1][0], d[i - 1][1]) + a[i].b;
 	}
-	cout << min(min(d[n-1][0],d[n-1][1]),d[n-1][2]) << '\n';
+	cout << min(min(d[n - 1][0], d[n - 1][1]), d[n - 1][2]) << '\n';
 }
