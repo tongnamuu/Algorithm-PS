@@ -1,15 +1,12 @@
 #include <iostream>
 using namespace std;
 int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(0);
-	cout.tie(0);
+	ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
 	int T;
 	cin >> T;
 	for (int test_case = 1; test_case <= T; ++test_case) {
 		int a, b;
 		cin >> a >> b;
-
 		int x1 = 1, x2 = 0;
 		int y1 = 0, y2 = 1;
 		int pn = 2;
@@ -26,6 +23,6 @@ int main() {
 			a = b;
 			b = r;
 		}
-		cout << '#'<<test_case<<' '<<x1 << ' ' << y1 << '\n'; 
+		cout << '#' << test_case << ' ' << x1 << ' ' << y1 << '\n';
 	}
 }
