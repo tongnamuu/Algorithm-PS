@@ -16,7 +16,7 @@ int main() {
 			}
 			else d[i] = min(d[i - 1] + a[1], d[i - 1] + b[i] * a[0]);
 		}
-		int ans = min(a[3], d[12]);
+		int ans = min(d[12], a[3]);
 		cout << '#' << test_case << ' ' << ans << '\n';
 	}
 }
