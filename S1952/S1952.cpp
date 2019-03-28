@@ -7,7 +7,7 @@ int main() {
 	for (int test_case = 1; test_case <= T; ++test_case) {
 		int a[4], b[13] = { 0, };
 		int d[13] = { 0, };
-		for (int i = 0; i < 4; ++i) cin >> a[i];//1일  1달 3달 1년
+		for (int i = 0; i < 4; ++i) cin >> a[i];
 		for (int i = 1; i <= 12; ++i) cin >> b[i];
 		for (int i = 1; i <= 12; ++i) {
 			if (i >= 3) {
