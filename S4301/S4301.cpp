@@ -10,10 +10,7 @@ int main() {
 	int T; cin >> T;
 	for (int test_case = 1; test_case <= T; ++test_case) {
 		int n, m; cin >> n >> m;
-		int a = n / 4;
-		int b = n / 4;
-		int ans = 0;
-		ans += (n / 4)*(m / 4)*d[4][4] + (n / 4)*(d[4][m % 4]) + (m / 4)*(d[n % 4][4]) + d[n % 4][m % 4];
+		int ans = (n / 4)*(m / 4)*d[4][4] + (n / 4)*(d[4][m % 4]) + (m / 4)*(d[n % 4][4]) + d[n % 4][m % 4];
 		cout << '#' << test_case << ' ' << ans << '\n';
 	}
 }
