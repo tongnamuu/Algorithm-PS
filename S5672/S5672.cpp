@@ -26,7 +26,7 @@ int main() {
 					if (a[fx] > b[bs]) ans[size++] = b[j++];
 					else if (a[fx] < b[bs]) ans[size++] = a[i++];
 					else {
-						if (size < n) ans[size++] = a[i++];
+						while (size < n) ans[size++] = a[i++];
 					}
 				}
 				else {
