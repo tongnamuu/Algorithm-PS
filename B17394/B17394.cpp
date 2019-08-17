@@ -50,5 +50,4 @@ int main() {
 		}
 		if (!find) cout << -1 << '\n';
 	}
-
 }
