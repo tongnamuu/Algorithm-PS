@@ -22,7 +22,7 @@ int main() {
 	cin >> n >> m >> dist;
 	a = vector<vector<long long>>(n, vector<long long>(m));
 	d = vector<vector<long long>>(n, vector<long long>(m));
-	for (int i = n - 1; i >= 0; --i) {
+	for (int i = 0; i < n; ++i) {
 		for (int j = 0; j < m; ++j) {
 			cin >> a[i][j];
 			d[i][j] = INF;
