@@ -1,5 +1,4 @@
 #include <iostream>
-#include <assert.h>
 #define SIZE 200001*6
 using namespace std;
 char f1[21];
@@ -34,7 +33,6 @@ int insert(int node, const char* str) {
 	int& nextnode = trieNode[node].children[chartoNum(*str)];
 	if (nextnode == -1) {
 		nextnode = nextNode();
-		assert(nextnode <= SIZE);
 	}
 	return insert(nextnode, str + 1);
 }
