@@ -5,21 +5,23 @@ int main() {
 	int G; cin >> G;
 	int now = 1;
 	int prev = 1;
+	long long x = (long long)(now + prev);
+	long long y = (long long)(now - prev);
 	bool ans = false;
-	while (prev <= now ) {
-		int g = now * now - prev * prev;
-		if (now - prev == 1 && G < g) break;
-		if (g == G) {
+	while (x <= G && y <= G) {
+		if (x*y == G) {
 			cout << now << '\n';
 			now++;
 			ans = true;
 		}
-		else if (g < G) {
+		else if (x*y < G) {
 			now++;
 		}
 		else {
 			prev++;
 		}
+		x = (long long)(now + prev);
+		y = (long long)(now - prev);
 	}
-	if (!ans) cout << -1 << '\n';
+	if (!ans) cout << -1;
 }
