@@ -4,7 +4,7 @@ int main() {
 	ios_base::sync_with_stdio(false), cin.tie(0), cout.tie(0);
 	int n, k; cin >> n >> k;
 	int start = 1;
-	long long end = 1000000000;
+	int end = 1000000000;
 	while (start <= end) {
 		int mid = start + end >> 1;
 		int cnt = 0;
