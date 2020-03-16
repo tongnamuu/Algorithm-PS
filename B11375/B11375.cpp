@@ -23,9 +23,9 @@ int dfs(int now) {
 }
 int flow() {
 	int ans = 0;
-	fill(pred, pred + n + 2, -1);
+	fill(pred, pred + n + 1, -1);
 	for(int i=1;i<=n;++i){
-		fill(check, check + n + 2, false);
+		fill(check, check + n + 1, false);
 		if (dfs(i)) ++ans;
 	}
 	return ans;
@@ -40,5 +40,6 @@ int main() {
 			adj[i].push_back(y);
 		}
 	}
+	n = max(n, m);
 	cout << flow();
 }
