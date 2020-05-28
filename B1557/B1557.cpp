@@ -11,8 +11,8 @@ long long cal(long long k) {
 }
 int main() {
     ios_base::sync_with_stdio(false), cin.tie(0);
-    long long k; cin >> k;
-    for (long long i = 1; i < N; ++i) {
+    int k; cin >> k;
+    for (int i = 1; i < N; ++i) {
         a[i] = 1;
     }
     for (long long i = 2LL; i < N; ++i) {
@@ -24,14 +24,14 @@ int main() {
             a[j] = 0;
         }
     }
-    for (long long i = 2; i < N; ++i) {
+    for (int i = 2; i < N; ++i) {
         if (a[i] == i) a[i] = 1;
         else if (a[i] == -i) a[i] = -1;
         else if (a[i] > 0) a[i] = 1;
         else if (a[i] < 0) a[i] = -1;
     }
-    long long s = 1LL;
-    long long e = 20000000000LL;
+    long long s = 1;
+    long long e = 10000000000LL;
     while (s < e) {
         long long m = (s + e) / 2;
         long long v = cal(m);
