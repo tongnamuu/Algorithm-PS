@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <vector>
 #include <queue>
-#include <cassert>
 using namespace std;
 #define N 5001
 #define INF 1000000001
@@ -33,7 +32,7 @@ int main() {
     }
     priority_queue<Edge>q;
     q.push({ 1,0 });
-    d[0] = 0;
+    d[1] = 0;
     while (!q.empty()) {
         int now = q.top().v;
         int c = q.top().c;
