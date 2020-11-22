@@ -1,41 +1,7 @@
 #include <iostream>
-#define SIZE 200001*6
+#include <string>
+#include <map>
 using namespace std;
-char f1[21];
-char f2[21];
-struct Trie {
-	int children[52];
-	int isend;
-};
-struct Trie trieNode[SIZE];
-int nodeCnt;
-int namekind;
-int nextNode() {
-	++nodeCnt;
-	for (int i = 0; i < 52; ++i) {
-		trieNode[nodeCnt].children[i] = -1;
-	}
-	trieNode[nodeCnt].isend = 0;
-	return nodeCnt;
-}
-int chartoNum(char ch) {
-	if (ch >= 'A'&&ch <= 'Z') return ch - 'A' + 26;
-	return ch - 'a';
-}
-int insert(int node, const char* str) {
-	if (*str == 0) {
-		if (trieNode[node].isend == 0) {
-			++namekind;
-			trieNode[node].isend = namekind;
-		}
-		return trieNode[node].isend;
-	}
-	int& nextnode = trieNode[node].children[chartoNum(*str)];
-	if (nextnode == -1) {
-		nextnode = nextNode();
-	}
-	return insert(nextnode, str + 1);
-}
 int p[100001];
 int Rank[100001];
 void init() {
@@ -59,15 +25,26 @@ void merge(int x, int y) {
 }
 void solve() {
 	int n; cin >> n;
-	nodeCnt = -1;
-	namekind = 0;
-	int root = nextNode();
+    string s1, s2;
+    map<string, int> name;
 	init();
+    int cnt = 0;
 	for (int i = 0; i < n; ++i) {
-		cin >> f1 >> f2;
-		int x = insert(root, f1);
-		int y = insert(root, f2);
-		merge(x, y);
+        cin >> s1 >> s2;
+        int x, y;
+        if (name.find(s2) != name.end()) {
+            y = name[s2];
+        }
+        else {
+            y = name[s2] = ++cnt;
+        }
+        if (name.find(s1) != name.end()) {
+            x = name[s1];
+        }
+        else {
+            x = name[s1] = ++cnt;
+        }
+        merge(x, y);
 		x = findparent(x);
 		cout << Rank[x] << '\n';
 	}
