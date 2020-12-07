@@ -9,7 +9,6 @@ int a[31][31];
 struct Edge { int to, c; };
 vector<Edge>adj[901];
 long long dist[901];
-int next_ghost[901];
 int get_node(int x, int y, int m) {
     return x * m + y;
 }
@@ -22,7 +21,6 @@ bool solve() {
             dist[node] = INF;
             a[i][j] = 0;
             adj[node].clear();
-            next_ghost[node] = 0;
         }
     }
     int g; cin >> g;
