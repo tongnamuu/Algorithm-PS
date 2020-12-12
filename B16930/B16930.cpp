@@ -37,7 +37,7 @@ int main() {
                     q.push({ nx,ny });
                     d[nx][ny] = d[x][y] + 1;
                 }
-                else if (d[n][ny] != -1 && d[nx][ny] <= d[x][y]) break;
+                else if (d[nx][ny] != -1 && d[nx][ny] <= d[x][y]) break;
                 nx += dx[dir];
                 ny += dy[dir];
                 cnt--;
