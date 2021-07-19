@@ -2,7 +2,7 @@
 #include<string>
 using namespace std;
 long long d[100002][16];
-int main(int argc, char** argv)
+int main()
 {
     ios_base::sync_with_stdio(false), cin.tie(0);
     int tc; int T; cin >> T;
