@@ -10,7 +10,6 @@ bool isP(const string& s, int i, int j) {
 }
 bool isP1(const string& s) {
     int i = 0, j = s.length() - 1;
-    int change = 0;
     while (i < j) {
         if (s[i] == s[j]){
             i++;
